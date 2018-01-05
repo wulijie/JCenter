@@ -53,7 +53,7 @@ bintray {
         repo = bintrayRepo
         name = bintrayName
         //有的账号需要在组织下创建Maven库 此时如果不增加UserOrg会出现404的错误
-        if(bintrayUserOrg!=null && bintrayUserOrg!=""){
+        if(bintrayUserOrg!=null){
            userOrg = bintrayUserOrg 
         }
         desc = libraryDescription
