@@ -41,6 +41,9 @@ android.libraryVariants.all { variant ->
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
+//有的账号需要在组织下创建Maven库 此时如果不增加UserOrg会出现404的错误 
+def bintrayUserOrg = properties.getProperty("bintray.userOrg")
+
 bintray {
     user = properties.getProperty("bintray.user")
     key = properties.getProperty("bintray.apikey")
@@ -49,7 +52,9 @@ bintray {
     pkg {
         repo = bintrayRepo
         name = bintrayName
-        userOrg = properties.getProperty("bintray.userOrg")
+        if(bintrayUserOrg!=null || bintrayUserOrg!=""){
+           userOrg = bintrayUserOrg 
+        }
         desc = libraryDescription
         websiteUrl = siteUrl
         vcsUrl = gitUrl
