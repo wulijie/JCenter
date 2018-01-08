@@ -89,8 +89,9 @@ apply from:'https://raw.githubusercontent.com/wulijie/JCenter/v2/install.gradle'
 9. 在local.properties里加上：  
 
 ```
-bintray.apikey=********************
-bintray.user=****
+bintray.apikey=apiKey(点击Edit可以看到)
+bintray.user=Bintray用户名
+bintray.userOrg=组织名（如果你的maven库并没有创建在组织下 这个是不需要增加的）
 
 ```
 user为下图：
